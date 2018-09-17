@@ -1,0 +1,81 @@
+baseurl = "https://coredns.io/"
+languageCode = "en-us"
+title = "CoreDNS: DNS and Service Discovery"
+copyright = "CoreDNS - All Rights Reserved"
+theme = "coredns"
+enableGitInfo = true
+
+[permalinks]
+  blog = "/:year/:month/:day/:title/"
+  page = "/:title/"
+
+[params]
+  # popup enables a in-page banner for important announcement: see ./layouts/partials/popup.html
+  # Enable with non empty string.
+  popup    = "yes"
+  logo     = "/images/CoreDNS_Colour_Icon.png"
+  twitter  = "https://twitter.com/corednsio"
+  github   = "https://github.com/coredns/coredns"
+  manual   = "https://github.com/coredns/coredns.io/blob/master/content/manual"
+  email    = "info@coredns.io"
+  slack    = "https://slack.cncf.io/"
+
+[[menu.main]]
+    name = "Plugins"
+    weight = -200
+    url = "/plugins/"
+[[menu.main]]
+    name = "External Plugins"
+    weight = -190
+    url = "/explugins/"
+    external = ""
+[[menu.main]]
+    name = "Blog"
+    weight = -180
+    url = "/blog/"
+[[menu.main]]
+    name = "Manual"
+    weight = -160
+    url = "/manual/toc"
+[[menu.main]]
+    name = "Community"
+    weight = -120
+    url = "/community/"
+
+[params.authors.coredns]
+  name = "CoreDNS Authors"
+  email = "info@coredns.io"
+  twitter = "https://twitter.com/corednsio"
+  github = "https://github.com/coredns/coredns"
+
+[params.authors.miek]
+  name = "Miek Gieben"
+  email = "miek@coredns.io"
+  twitter = "https://twitter.com/miekg"
+  github = "https://github.com/miekg"
+
+[params.authors.john]
+  name = "John Belamaric"
+  email = "jbelamaric@infoblox.com"
+  twitter = "https://twitter.com/johnbelamaric"
+  github = "https://github.com/johnbelamaric"
+
+[params.authors.chris]
+  name = "Chris O'Haver"
+  email = "cohaver@infoblox.com"
+  twitter = "https://twitter.com/chrisohaver"
+  github = "https://github.com/chrisohaver"
+
+[params.authors.jonathan]
+  name = "Jonathan Dickinson"
+  github = "https://github.com/jcdickinson"
+
+[params.authors.varyoo]
+  name = "Antoine D."
+  github = "https://github.com/varyoo"
+  email = "varyoo@coredns.io"
+
+[params.authors.sandeep]
+  name = "Sandeep Rajan"
+  email = "srajan@infoblox.com"
+  github = "https://github.com/rajansandeep"

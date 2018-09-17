@@ -1,0 +1,40 @@
+<p>
+  {{ $author := index .Site.Params.authors .Params.author }}
+
+  {{ if ne .Site.Params.hide_author true }}
+    {{ with .Params.author }}
+
+      {{ $author.name }} 
+
+      {{ if $author.email }}
+        <a href="mailto:{{ $author.email }}"><i class="fa fa-envelope"></i></a>
+      {{ end }}
+
+      {{ if $author.twitter }}
+        <a href="{{ $author.twitter }}"><i class="fa fa-twitter"></i></a>
+      {{ end }}
+
+      {{ if $author.github }}
+        <a href="{{ $author.github }}"><i class="fa fa-github"></i></a>
+      {{ end }}
+
+
+    {{ else }}
+
+      <span itemprop="author">{{ .Site.Params.author }}</span>
+
+    {{ end }}
+  {{ end }}
+  <br/>
+  Published:
+  <time datetime="{{ dateFormat "2006-01-02T15:04:05-07:00" (default .Date (.PublishDate)) }}">
+    {{ dateFormat "2 Jan, 2006" (default .Date (.PublishDate)) }}
+  </time>
+  {{ with .Params.categories }}
+    in <span itemprop="articleSection">{{ delimit (apply (apply (sort .) "partial" "post/category-link" ".") "chomp" ".") ", " " and " }}</span>
+  {{ end }}
+  {{ with .Params.tags }}
+    and tagged {{ delimit (apply (apply (sort .) "partial" "post/tag-link" ".") "chomp" ".") ", " " and " }}
+  {{ end }}
+  using <span itemprop="wordCount">{{ .WordCount }}</span> words.
+</p>
